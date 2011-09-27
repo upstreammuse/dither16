@@ -4,8 +4,8 @@
 // public
 
 DitherThread::DitherThread(QImage image, QObject* parent)
-      : QThread(parent),
-        image_(image)
+   : QThread(parent),
+     image_(image)
 {
 }
 

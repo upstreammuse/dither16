@@ -5,11 +5,11 @@
 
 class Dither16 : public QObject
 {
-   Q_OBJECT
+      Q_OBJECT
 
    public:
-      explicit Dither16(bool autoquit, QString filename, bool overwrite,
-                        QObject* parent = 0);
+      Dither16(bool autoquit, QString filename, bool overwrite,
+               QObject* parent = 0);
 
    public slots:
       void ditheredImage(QImage image);

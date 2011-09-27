@@ -7,11 +7,11 @@
 
 class Ditherer : public QLabel
 {
-   Q_OBJECT
+      Q_OBJECT
 
    public:
       explicit Ditherer(QImage image, QWidget* parent = 0);
-      virtual ~Ditherer();
+      ~Ditherer();
       void start();
 
    signals:

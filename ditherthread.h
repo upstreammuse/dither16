@@ -8,7 +8,7 @@
 
 class DitherThread : public QThread
 {
-   Q_OBJECT
+      Q_OBJECT
 
    public:
       explicit DitherThread(QImage image, QObject* parent = 0);

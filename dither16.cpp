@@ -7,10 +7,10 @@
 
 Dither16::Dither16(bool autoquit, QString filename, bool overwrite,
                    QObject* parent)
-      : QObject(parent),
-        autoquit_(autoquit),
-        filename_(filename),
-        overwrite_(overwrite)
+   : QObject(parent),
+     autoquit_(autoquit),
+     filename_(filename),
+     overwrite_(overwrite)
 {
 }
 
@@ -50,15 +50,13 @@ int main(int argc, char** argv)
    }
 
    Dither16 dither16(autoquit, filename, overwrite);
-   Ditherer ditherer(QImage(filename != "" ? filename
-                            : QFileDialog::getOpenFileName()));
+   Ditherer ditherer(QImage(
+              !filename.isEmpty() ? filename : QFileDialog::getOpenFileName()));
    QObject::connect(&ditherer, SIGNAL(ditheredImage(QImage)),
                     &dither16, SLOT(ditheredImage(QImage)));
    QObject::connect(&dither16, SIGNAL(quit()), &app, SLOT(quit()));
    ditherer.show();
    ditherer.start();
 
-   app.exec();
-
-   return 0;
+   return app.exec();
 }

@@ -3,8 +3,8 @@
 // public
 
 Ditherer::Ditherer(QImage image, QWidget* parent)
-      : QLabel(parent),
-        thread_(new DitherThread(image, this))
+   : QLabel(parent),
+     thread_(new DitherThread(image, this))
 {
    setPixmap(QPixmap::fromImage(image));
    connect(thread_, SIGNAL(finalImage(QImage)), this, SLOT(finalImage(QImage)));
