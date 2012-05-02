@@ -1,9 +1,5 @@
-#ifndef DITHERTHREAD_H
-#define DITHERTHREAD_H
-
-#include <QColor>
+#pragma once
 #include <QImage>
-#include <QObject>
 #include <QThread>
 
 class DitherThread : public QThread
@@ -24,5 +20,3 @@ class DitherThread : public QThread
 
       QImage image_;
 };
-
-#endif

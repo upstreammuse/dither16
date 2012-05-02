@@ -1,6 +1,4 @@
-#ifndef DITHER16_H
-#define DITHER16_H
-
+#pragma once
 #include <QImage>
 
 class Dither16 : public QObject
@@ -22,5 +20,3 @@ class Dither16 : public QObject
       QString filename_;
       bool overwrite_;
 };
-
-#endif

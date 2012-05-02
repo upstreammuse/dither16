@@ -1,5 +1,7 @@
-#include <cmath>
 #include "ditherthread.h"
+
+#include <cmath>
+#include <QColor>
 
 // public
 

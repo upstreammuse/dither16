@@ -1,6 +1,7 @@
+#include "dither16.h"
+
 #include <QApplication>
 #include <QFileDialog>
-#include "dither16.h"
 #include "ditherer.h"
 
 // public
@@ -24,6 +25,8 @@ void Dither16::ditheredImage(QImage image)
       emit quit();
    }
 }
+
+// other
 
 int main(int argc, char** argv)
 {
@@ -50,8 +53,7 @@ int main(int argc, char** argv)
    }
 
    Dither16 dither16(autoquit, filename, overwrite);
-   Ditherer ditherer(QImage(
-              !filename.isEmpty() ? filename : QFileDialog::getOpenFileName()));
+   Ditherer ditherer(QImage(!filename.isEmpty() ? filename : QFileDialog::getOpenFileName()));
    QObject::connect(&ditherer, SIGNAL(ditheredImage(QImage)),
                     &dither16, SLOT(ditheredImage(QImage)));
    QObject::connect(&dither16, SIGNAL(quit()), &app, SLOT(quit()));

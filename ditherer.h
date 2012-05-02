@@ -1,7 +1,4 @@
-#ifndef DITHERER_H
-#define DITHERER_H
-
-#include <QImage>
+#pragma once
 #include <QLabel>
 #include "ditherthread.h"
 
@@ -24,5 +21,3 @@ class Ditherer : public QLabel
       void finalImage(QImage image);
       void image(QImage image);
 };
-
-#endif
