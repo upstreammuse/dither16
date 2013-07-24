@@ -1,4 +1,5 @@
 TEMPLATE = app
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 CONFIG += warn_on
 HEADERS += \
    dither16.h \
